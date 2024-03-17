@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPosts } from '../../../../gazingcalvary/lib/client';
+import { getPosts } from '../../../../gazingcalvary/gazingnew/lib/client';
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
