@@ -1,0 +1,9 @@
+{
+    "root": {
+      "api": {
+        "projectId": "m1wwyabv",
+        "dataset": "production",
+        "useCdn": false
+      }
+    }
+  }
