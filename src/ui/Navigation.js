@@ -11,7 +11,7 @@ import { BiChevronRight } from 'react-icons/bi';
 const Navigation = () => {
   const navigationMenu = [
     {
-      href: '#',
+      href: '/',
       label: 'Home',
     },
     {
