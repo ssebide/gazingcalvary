@@ -1,5 +1,5 @@
 import BlogCard from "./BlogCard";
-import { getPosts } from "../../../../gazingcalvary/gazingnew/lib/client";
+import { getPosts } from "../../../gazingnew/lib/client";
 
 const BlogSection = async () => {
   const posts = await getPosts();

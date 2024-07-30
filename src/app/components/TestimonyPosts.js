@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTestimonies } from '../../../../gazingcalvary/gazingnew/lib/test';
+import { getTestimonies} from '../../../gazingnew/lib/test'
 import TestimonyCard from './TestimonyCard';
 
 const TestimonyPosts = async () => {
