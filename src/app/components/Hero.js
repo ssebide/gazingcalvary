@@ -48,7 +48,7 @@ const Hero = () => {
               </h1>
             )}
             {heroContent.text.description && (
-              <p className='leading-relaxed text-body mb-10' data-aos="fade-up" data-aos-delay="200">
+              <p className='leading-relaxed text-black mb-10' data-aos="fade-up" data-aos-delay="200">
                 {heroContent.text.description}
               </p>
             )}

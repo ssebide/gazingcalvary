@@ -39,7 +39,7 @@ const UserForm = () => {
   
 
   return (
-    <div id="join">
+    <div id="join" className='mt-10'>
       <div className="w-full flex justify-center items-center mx-auto m-4 mt-[90px]" data-aos="fade-up" data-aos-delay="100">
         <form className=" shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit} name="submit-to-google-sheet">
           {/* Form fields */}
