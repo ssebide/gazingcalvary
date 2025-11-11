@@ -1,52 +1,62 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import AOS from 'aos';
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 const UserForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [location, setLocation] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzOvqtzO1S7dCXizNUNtia0FF5kWd6cHPY5NndYqw3XLv9TdJDUt7W0y_A3uo0KMfs/exec';
-    const form = document.forms['submit-to-google-sheet'];
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbzOvqtzO1S7dCXizNUNtia0FF5kWd6cHPY5NndYqw3XLv9TdJDUt7W0y_A3uo0KMfs/exec";
+    const form = document.forms["submit-to-google-sheet"];
     const msg = document.getElementById("msg");
-  
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
+
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
         msg.innerHTML = "Thanks for Joining Us!";
-        setTimeout(function(){
-            msg.innerHTML = "";
-        }, 5000)
+        setTimeout(function () {
+          msg.innerHTML = "";
+        }, 5000);
         form.reset();
       })
-      .catch(error => console.error('Error!', error.message));
+      .catch((error) => console.error("Error!", error.message));
   };
 
   useEffect(() => {
     AOS.init({
       duration: 700,
-      easing: 'slide',
+      easing: "slide",
       once: true,
     });
   }, []);
 
-  
-
   return (
-    <div id="join" className='mt-10'>
-      <div className="w-full flex justify-center items-center mx-auto m-4 mt-[90px]" data-aos="fade-up" data-aos-delay="100">
-        <form className=" shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit} name="submit-to-google-sheet">
+    <div id="join" className="mt-10">
+      <div
+        className="w-full flex justify-center items-center mx-auto m-4 mt-[90px]"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <form
+          className=" shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          onSubmit={handleSubmit}
+          name="submit-to-google-sheet"
+        >
           {/* Form fields */}
           <div className="flex">
             {/* Name field */}
             <div className="mb-4 mr-2">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="name"
+              >
                 Name
               </label>
               {/* Name input */}
@@ -63,7 +73,10 @@ const UserForm = () => {
             </div>
             {/* Email field */}
             <div className="mb-4 ml-2">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="email"
+              >
                 Email
               </label>
               {/* Email input */}
@@ -82,7 +95,10 @@ const UserForm = () => {
           <div className="flex">
             {/* Phone field */}
             <div className="mb-4 mr-2">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="phone"
+              >
                 Phone
               </label>
               {/* Phone input */}
@@ -99,7 +115,10 @@ const UserForm = () => {
             </div>
             {/* Location field */}
             <div className="mb-4 ml-2">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="location">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="location"
+              >
                 Location
               </label>
               {/* Location input */}
@@ -125,10 +144,9 @@ const UserForm = () => {
             </button>
           </div>
         </form>
-        
       </div>
-      <span id="msg" className='text-center text-green-700 ml-[685px]'></span>
-      <hr className='mt-10 w-full'/>
+      <span id="msg" className="text-center text-green-700 ml-[685px]"></span>
+      <hr className="mt-10 w-full" />
     </div>
   );
 };

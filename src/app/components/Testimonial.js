@@ -1,14 +1,11 @@
 "use client";
 import React, { useEffect, useState, useCallback } from "react";
-import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from 'next/image'
-import quote from "../../../public/Images/qoute.png"
-
+import Image from "next/image";
+import quote from "../../../public/Images/qoute.png";
 
 const Testimonial = () => {
-
   const [whatsappMessage, setWhatsappMessage] = useState("");
 
   const handleShareTestimony = useCallback(() => {
@@ -16,7 +13,6 @@ const Testimonial = () => {
     window.open(`https://wa.me/+256755073651?text=${message}`, "_blank");
     setWhatsappMessage("");
   }, [whatsappMessage]);
-
 
   const testimonialContent = {
     heading: {
@@ -33,29 +29,31 @@ const Testimonial = () => {
       {
         img: "/Images/Matthew.jpg",
         name: "Revelation 14:12-14",
-        verse: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.",
+        verse:
+          "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.",
       },
       {
         img: "/Images/timothy.jpg",
         name: "Matthew 24:14",
-        verse: "And this Gospel of the Kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come.",
+        verse:
+          "And this Gospel of the Kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come.",
       },
       {
         img: "/Images/john.jpg",
         name: "John 3:16",
-        verse: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+        verse:
+          "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
       },
-    ]
+    ],
   };
 
   useEffect(() => {
     AOS.init({
       duration: 700,
-      easing: 'slide',
+      easing: "slide",
       once: true,
-    })
-  })
-
+    });
+  });
 
   return (
     <section className="py-20 bg-light" id="testify">
@@ -63,7 +61,8 @@ const Testimonial = () => {
         <div className="lg:flex justify-between items-center">
           <div
             className="lg:w-4/12 lg:pr-24 mb-10 lg:mb-0"
-            data-aos="fade-up" data-aos-delay={100}
+            data-aos="fade-up"
+            data-aos-delay={100}
           >
             {testimonialContent.heading.headingSubTitle && (
               <span className="inline-block py-0.5 z-50 pl-3 text-heading mt-5 font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-blueLight before:left-0 before:top-0 before:bottom-0 before:z-[-1]">
@@ -105,20 +104,33 @@ const Testimonial = () => {
             <div className="md:flex w-full space-x-0 md:space-x-6 items-end">
               <div className="md:w-6/12 mb-6 md:mb-0">
                 {testimonialContent.testimonials.map((testimonial, idx) => {
-
                   if (idx == 2) return null;
 
                   return (
                     <div
                       key={idx} // Add key prop for the element in the iterator
-                      className={`bg-white p-7 rounded-lg w-full ${idx == 1 ? "" : "mb-6"}`}
-                      data-aos="fade-right" data-aos-delay={100}
+                      className={`bg-white p-7 rounded-lg w-full ${
+                        idx == 1 ? "" : "mb-6"
+                      }`}
+                      data-aos="fade-right"
+                      data-aos-delay={100}
                     >
-                      <div className="flex space-x-4 items-center mb-4" >
+                      <div className="flex space-x-4 items-center mb-4">
                         <div className="relative">
-                          <Image src={testimonial.img} width={579} height={720} className="object-cover h-14 w-14 rounded-full" alt="Bible" />
+                          <Image
+                            src={testimonial.img}
+                            width={579}
+                            height={720}
+                            className="object-cover h-14 w-14 rounded-full"
+                            alt="Bible"
+                          />
                           <span className="absolute bottom-0 -right-2 w-6 h-4 rounded-full items-center justify-center">
-                            <Image src={quote} width={14} height={9} alt="quote" />
+                            <Image
+                              src={quote}
+                              width={14}
+                              height={9}
+                              alt="quote"
+                            />
                           </span>
                         </div>
                         <div className="leading-3">
@@ -129,24 +141,37 @@ const Testimonial = () => {
                           )}
                         </div>
                       </div>
-                      <div >
-                        <blockquote>
-                          &quot;{testimonial.verse}&quot;
-                        </blockquote>
+                      <div>
+                        <blockquote>&quot;{testimonial.verse}&quot;</blockquote>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
-              <div className="md:w-6/12" >
+              <div className="md:w-6/12">
                 <div>
                   <div className="w-16 h-16 hidden md:block bg-greenLight rounded-full mb-6"></div>
-                  <div className="bg-white p-7 rounded-lg w-full mb-6" data-aos="fade-left" data-aos-delay={100}>
+                  <div
+                    className="bg-white p-7 rounded-lg w-full mb-6"
+                    data-aos="fade-left"
+                    data-aos-delay={100}
+                  >
                     <div className="flex space-x-4 items-center mb-4">
                       <div className="relative">
-                        <Image src={testimonialContent.testimonials[2].img} width={579} height={720} className="object-cover h-14 w-14 rounded-full" alt="image" />
+                        <Image
+                          src={testimonialContent.testimonials[2].img}
+                          width={579}
+                          height={720}
+                          className="object-cover h-14 w-14 rounded-full"
+                          alt="image"
+                        />
                         <span className="absolute bottom-0 -right-2 w-6 h-4 rounded-full items-center justify-center">
-                          <Image src={quote} width={14} height={9} alt="quote" />
+                          <Image
+                            src={quote}
+                            width={14}
+                            height={9}
+                            alt="quote"
+                          />
                         </span>
                       </div>
                       <div className="leading-3">
@@ -157,7 +182,7 @@ const Testimonial = () => {
                         )}
                       </div>
                     </div>
-                    <div >
+                    <div>
                       <blockquote>
                         &quot;{testimonialContent.testimonials[2].verse}&quot;
                       </blockquote>
